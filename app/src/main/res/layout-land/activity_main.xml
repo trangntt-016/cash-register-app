@@ -28,35 +28,39 @@
     <TextView
         android:id="@+id/productType"
         android:layout_width="0dp"
-        android:layout_height="125dp"
+        android:layout_height="0dp"
         android:gravity="center"
         android:text="Product Type"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toStartOf="@+id/guidelineDivide"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guidelineStart"
         app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="127dp"
-        android:layout_height="71dp"
-        android:layout_marginBottom="28dp"
+        android:layout_height="0dp"
         android:backgroundTint="@color/backgroundSnackBar"
-        android:text="Manager"
         android:onClick="navigateToManagerOnClick"
-        app:layout_constraintBottom_toBottomOf="@+id/productType"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd" />
+        android:text="Manager"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toEndOf="@+id/productType"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <TextView
         android:id="@+id/totalPrice"
         android:layout_width="129dp"
         android:layout_height="31dp"
-        android:gravity="center|bottom"
-        android:paddingBottom="10dp"
+        android:layout_marginTop="28dp"
+        android:gravity="center"
         android:text="Total"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintStart_toEndOf="@+id/tableLayout"
-        app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/guidelineDivide"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
     <TableLayout
         android:id="@+id/tableLayout"
@@ -186,7 +190,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight=".33"
                 android:backgroundTint="@color/backgroundSnackBar"
-                android:onClick="clearInput"
+                android:onClick="deleteEverything"
                 android:text="C"
                 android:textColor="@color/black" />
 
@@ -199,41 +203,42 @@
                 android:text="0"
                 android:textColor="@color/black" />
 
-
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".33"
+                android:backgroundTint="@color/backgroundSnackBar"
+                android:onClick="deleteOnClick"
+                android:text="Del"
+                android:textColor="@color/black" />
         </TableRow>
 
     </TableLayout>
 
-    <TableLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tableLayout"
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="128dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/backgroundSnackBar"
+        android:onClick="buyOnClick"
+        android:text="Buy"
+        android:textColor="@color/black"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintStart_toEndOf="@+id/tableLayout"
-        app:layout_constraintTop_toBottomOf="@+id/totalPrice">
+        app:layout_constraintStart_toStartOf="@+id/guidelineDivide"
+        app:layout_constraintTop_toBottomOf="@+id/totalPrice" />
 
-        <Button
-            android:layout_width="118dp"
-            android:layout_height="226dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/backgroundSnackBar"
-            android:onClick="buyOnClick"
-            android:text="Buy"
-            android:textColor="@color/black"
-            app:cornerRadius="10dp" />
-    </TableLayout>
 
     <TextView
         android:id="@+id/quantity"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:text="Quantity"
         android:textSize="20dp"
         app:layout_constraintEnd_toStartOf="@+id/guidelineDivide"
-        app:layout_constraintHorizontal_bias="0.255"
         app:layout_constraintStart_toStartOf="@+id/guidelineStart"
         app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
@@ -292,7 +297,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.55" />
+        app:layout_constraintGuide_percent="0.71" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
